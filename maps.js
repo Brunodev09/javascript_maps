@@ -1,46 +1,53 @@
 class myCustomMap {
-    constructor(key, value) {
+    constructor() {
 
         this.collection = {};
         this.counter = 0;
 
-        this.size = function() {
-            return this.counter;
-        }
+    }
 
-        this.has = function(key) {
-            return (key in this.collection);
-        }
+    size() {
+        return this.counter;
+    }
 
-        this.set = function(key, value) {
-            this.collection[key] = value;
-            this.counter++;
-        }
+    has(key) {
+        return (key in this.collection);
+    }
 
-        this.get = function(key) {
-            return (key in this.collection) ? this.collection[key] : null;
-        }
+    set(key, value) {
+        this.collection[key] = value;
+        this.counter++;
+    }
 
-        this.delete = function(key) {
-            if (key in this.collection) {
-                delete this.collection[key];
-                this.counter--;
-            }
-        }
+    get(key) {
+        return (key in this.collection) ? this.collection[key] : null;
+    }
 
-        this.values = function() {
-            let final = [];
-            for (let key of Object.keys(this.collection)) {
-                final.push(this.collection[key]);
-            }
-            return (final.length > 0) ? final : null;
+    delete(key) {
+        if (key in this.collection) {
+            delete this.collection[key];
+            this.counter--;
         }
+    }
 
-        this.clear = function() {
-            this.collection = {};
-            this.counter = 0;
+    values() {
+        let final = [];
+        for (let key of Object.keys(this.collection)) {
+            final.push(this.collection[key]);
         }
+        return (result.length > 0) ? result : null;
+    }
+
+    clear() {
+        this.collection = {};
+        this.counter = 0;
     }
 }
 
+let map = new myCustomMap();
+map.set('bruno', 22);
+map.set('dino', 1);
 
+console.log(map.get('bruno'));
+console.log(map.size());
+console.log(map.values());
