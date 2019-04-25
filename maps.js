@@ -44,10 +44,3 @@ class myCustomMap {
     }
 }
 
-let map = new myCustomMap();
-map.set('bruno', 22);
-map.set('dino', 1);
-
-console.log(map.get('bruno'));
-console.log(map.size());
-console.log(map.values());
