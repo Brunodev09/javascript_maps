@@ -35,7 +35,7 @@ class myCustomMap {
         for (let key of Object.keys(this.collection)) {
             final.push(this.collection[key]);
         }
-        return (result.length > 0) ? result : null;
+        return (final.length > 0) ? final : null;
     }
 
     clear() {
